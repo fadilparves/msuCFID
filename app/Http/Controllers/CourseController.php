@@ -20,7 +20,7 @@ class CourseController extends AppBaseController
     public function __construct(CourseRepository $courseRepo)
     {
         $this->courseRepository = $courseRepo;
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
