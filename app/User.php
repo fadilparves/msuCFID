@@ -27,5 +27,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function Courses(){
+        return $this->hasMany('App\Models\Course');
+    }
+
+    public function Contents(){
+        return $this->hasMany('App\Mdoels\Content');
+    }
+
     
 }

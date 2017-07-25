@@ -97,7 +97,7 @@ class CourseController extends AppBaseController
     public function edit($id)
     {
         $course = $this->courseRepository->findWithoutFail($id);
-
+        $uid = Auth::id();
         if (empty($course)) {
             Flash::error('Course not found');
 
