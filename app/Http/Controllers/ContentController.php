@@ -77,6 +77,7 @@ class ContentController extends AppBaseController
     public function show($id)
     {
         $content = $this->contentRepository->findWithoutFail($id);
+        $subContentOnes = \App\Models\subContentOne::where('content_id', $id)->get();
 
         if (empty($content)) {
             Flash::error('Content not found');
@@ -84,7 +85,7 @@ class ContentController extends AppBaseController
             return redirect(route('contents.index'));
         }
 
-        return view('contents.show')->with('content', $content);
+        return view('contents.show')->with('content', $content)->with('subContentOnes', $subContentOnes);
     }
 
     /**

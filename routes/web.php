@@ -23,3 +23,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('courses', 'CourseController');
 
 Route::resource('contents', 'ContentController');
+
+Route::resource('subContentOnes', 'subContentOneController');

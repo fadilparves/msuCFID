@@ -58,4 +58,9 @@ class Content extends Model
     {
         return $this->belongsTo('App\Models\Course');
     }
+
+    public function subContentOne()
+    {
+        return $this->hasMany('App\Models\subContentOne');
+    }
 }

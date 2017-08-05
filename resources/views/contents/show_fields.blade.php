@@ -20,6 +20,9 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            @include('contents.subContentOneData');
+        </div>
         <div class="text-center">
             <a href="{!! route('contents.index') !!}" class="btn btn-default">Back</a>
         </div>
