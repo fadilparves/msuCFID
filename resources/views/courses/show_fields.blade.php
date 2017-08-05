@@ -1,8 +1,8 @@
 <!-- Id Field -->
-<div class="form-group">
+<!-- <div class="form-group">
     {!! Form::label('id', 'Id:') !!}
     <p>{!! $course->id !!}</p>
-</div>
+</div> -->
 
 <!-- Coursename Field -->
 <div class="form-group">
@@ -17,20 +17,20 @@
 </div>
 
 <!-- User Id Field -->
-<div class="form-group">
+<!-- <div class="form-group">
     {!! Form::label('user_id', 'User Id:') !!}
     <p>{!! $course->user_id !!}</p>
-</div>
+</div> -->
 
 <!-- Created At Field -->
-<div class="form-group">
+<!-- <div class="form-group">
     {!! Form::label('created_at', 'Created At:') !!}
     <p>{!! $course->created_at !!}</p>
-</div>
+</div> -->
 
 <!-- Updated At Field -->
-<div class="form-group">
+<!-- <div class="form-group">
     {!! Form::label('updated_at', 'Updated At:') !!}
     <p>{!! $course->updated_at !!}</p>
-</div>
+</div> -->
 

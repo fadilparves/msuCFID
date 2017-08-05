@@ -1,7 +1,7 @@
 <table class="table table-responsive" id="courses-table">
     <thead>
-        <th>Coursename</th>
-        <th>Coursecode</th>
+        <th>Course Name</th>
+        <th>Course Code</th>
         <!-- <th>User Id</th> -->
         <th colspan="3">Action</th>
     </thead>

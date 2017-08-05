@@ -2,8 +2,8 @@
 
 @section('content')
     <section class="content-header">
-        <h1>
-            Content
+        <h1 class="text-center">
+            Chapter - {{$content->chap_num}}
         </h1>
     </section>
     <div class="content">
@@ -11,7 +11,6 @@
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
                     @include('contents.show_fields')
-                    <a href="{!! route('contents.index') !!}" class="btn btn-default">Back</a>
                 </div>
             </div>
         </div>

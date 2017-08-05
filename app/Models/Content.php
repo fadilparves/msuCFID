@@ -22,7 +22,7 @@ class Content extends Model
 
     public $fillable = [
         'title',
-        'body',
+        'chap_num',
         'course_id',
         'user_id'
     ];
@@ -34,7 +34,7 @@ class Content extends Model
      */
     protected $casts = [
         'title' => 'string',
-        'body' => 'string',
+        'chap_num' => 'integer',
         'course_id' => 'integer',
         'user_id' => 'integer'
     ];
@@ -46,7 +46,7 @@ class Content extends Model
      */
     public static $rules = [
         'title' => 'required',
-        'body' => 'required'
+        'chap_num' => 'required'
     ];
 
     public function User()

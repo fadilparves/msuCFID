@@ -2,8 +2,8 @@
 
 @section('content')
     <section class="content-header">
-        <h1>
-            Course
+        <h1 class="text-center">
+            Edit Course
         </h1>
    </section>
    <div class="content">
