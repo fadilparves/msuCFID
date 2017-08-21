@@ -11,6 +11,8 @@ use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Illuminate\Support\Facades\Auth;
+use DB;
+
 
 class subContentOneController extends AppBaseController
 {
@@ -45,7 +47,8 @@ class subContentOneController extends AppBaseController
      */
     public function create()
     {
-        return view('sub_content_ones.create');
+        $last_sub_number = $this->subContentOneRepository->all();
+        return view('sub_content_ones.create')->with('last_sub_number', $last_sub_number);
     }
 
     /**

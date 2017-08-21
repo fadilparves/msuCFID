@@ -5,18 +5,25 @@
 </div> -->
 
 <!-- Coursename Field -->
-<div class="form-group">
-    {!! Form::label('courseName', 'Coursename:') !!}
-    <p>{!! $course->courseName !!}</p>
+<div class="container">
+    <div class="row">
+        <div class="box-body">
+            <div class="panel panel-default">
+                <div class="form-group">
+                    {!! Form::label('courseName', 'Coursename:') !!}
+                    <p>{!! $course->courseName !!}</p>
+                </div>
+                <!-- Coursecode Field -->
+                <div class="form-group">
+                    {!! Form::label('courseCode', 'Coursecode:') !!}
+                    <p>{!! $course->courseCode !!}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<!-- Coursecode Field -->
-<div class="form-group">
-    {!! Form::label('courseCode', 'Coursecode:') !!}
-    <p>{!! $course->courseCode !!}</p>
-</div>
-
-<!-- User Id Field -->
+                <!-- User Id Field -->
 <!-- <div class="form-group">
     {!! Form::label('user_id', 'User Id:') !!}
     <p>{!! $course->user_id !!}</p>

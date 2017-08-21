@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1 class="text-center">
-            Chapter - {{$content->chap_num}}
+            Chapter {{$content->chap_num}} - {{$content->title}}
         </h1>
         <div class="row">  
          <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px;margin-right: 105px;
@@ -14,7 +14,7 @@
         <div class="box box-primary">
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
-                    @include('contents.show_fields')
+                    @include('contents.subContentOneData');
                 </div>
             </div>
         </div>

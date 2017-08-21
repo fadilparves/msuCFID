@@ -77,6 +77,7 @@ class CourseController extends AppBaseController
     public function show($id)
     {
         $course = $this->courseRepository->findWithoutFail($id);
+        $contents = \App\Models\Content::where('course_id', $id)->get();
 
         if (empty($course)) {
             Flash::error('Course not found');
@@ -84,7 +85,7 @@ class CourseController extends AppBaseController
             return redirect(route('courses.index'));
         }
 
-        return view('courses.show')->with('course', $course);
+        return view('courses.show')->with('course', $course)->with('contents', $contents);
     }
 
     /**
