@@ -25,3 +25,6 @@ Route::resource('contents', 'ContentController');
 
 Route::resource('subContentOnes', 'subContentOneController');
 
+
+
+Route::resource('subContentTwoRepositories', 'subContentTwoRepositoryController');
