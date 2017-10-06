@@ -47,7 +47,7 @@ class subContentOneController extends AppBaseController
      */
     public function create()
     {
-        $last_sub_number = $this->subContentOneRepository->all();
+        $last_sub_number = $this->subContentOneRepository->orderBy('created_at', 'desc')->first();
         return view('sub_content_ones.create')->with('last_sub_number', $last_sub_number);
     }
 

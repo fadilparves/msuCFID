@@ -3,7 +3,13 @@
 		<div class="box-body">
 			<div class="form-group">
 				{{Form::label('sub_number', 'Sub Chapter Number')}}
-				{{Form::text('sub_number', null, array('class' => 'form-control', 'id' => 'sub_num','readonly'=> 'true'))}}
+				@if(isset($last_sub_number))
+					{{Form::hidden('cond', 1 , array('class' => 'form-control', 'placeholder'=>'', 'id' => 'cond'))}}
+					{{Form::hidden('sub_content_id', $last_sub_number->sub_number-1.0, array('class' => 'form-control', 'id' => 'sub_content_id'))}}
+					{{Form::text('sub_number', null, array('class' => 'form-control', 'id' => 'sub_num', 'readonly'=> 'true'))}}
+				@else
+					{{Form::text('sub_number', null, array('class' => 'form-control', 'id' => 'sub_num','readonly'=> 'true'))}}
+				@endif
 			</div>
 			<div class="form-group">
 				{{Form::label('title', 'Title')}}
@@ -18,7 +24,7 @@
 <!-- Submit Field -->
 			<div class="form-group col-sm-12">
 			    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-			    <a href="{!! route('subContentTwoRepositories.index') !!}" class="btn btn-default">Cancel</a>
+			    <a href="{!! route('subContentOnes.index') !!}" class="btn btn-default">Cancel</a>
 			</div>
 		</div>
 	</div>
@@ -26,10 +32,25 @@
 
 <script type="text/javascript">
 	$(document).ready(function () {
-		var x = $('#courses_id').val();
+		var cond = $('#cond').val();
 
-		var xv = x + "." + 1;
+		if(cond == 1)
+		{
+			var x = $('#courses_id').val();
+			var y = $('#sub_content_id').val();
 
-		$('#sub_num').val(xv);
+			var xy = parseFloat(x) + parseFloat(y);
+
+			$('#sub_num').val(xy.toFixed(1));
+		}
+		else
+		{
+			var x = $('#courses_id').val();
+
+			var xv = x + "." + 1;
+
+			$('#sub_num').val(xv);
+		}
+
 	});
 </script>
