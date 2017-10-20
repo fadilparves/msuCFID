@@ -1,42 +1,16 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $subContentTwoRepository->id !!}</p>
-</div>
-
-<!-- Sub Number Field -->
-<div class="form-group">
-    {!! Form::label('sub_number', 'Sub Number:') !!}
-    <p>{!! $subContentTwoRepository->sub_number !!}</p>
-</div>
-
-<!-- Title Field -->
-<div class="form-group">
-    {!! Form::label('title', 'Title:') !!}
-    <p>{!! $subContentTwoRepository->title !!}</p>
-</div>
-
-<!-- Body Field -->
-<div class="form-group">
-    {!! Form::label('body', 'Body:') !!}
-    <p>{!! $subContentTwoRepository->body !!}</p>
-</div>
-
-<!-- Sub Content One Id Field -->
-<div class="form-group">
-    {!! Form::label('sub_content_one_id', 'Sub Content One Id:') !!}
-    <p>{!! $subContentTwoRepository->sub_content_one_id !!}</p>
-</div>
-
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $subContentTwoRepository->created_at !!}</p>
-</div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $subContentTwoRepository->updated_at !!}</p>
-</div>
-
+<div class="container">
+    <div class="row">
+        <div class="box-body">
+            <div class="panel panel-default">
+                <div class="panel-heading">{!! $subContentTwoRepository->sub_number !!} - {!! $subContentTwoRepository->title !!}</div>
+                <!-- Body Field -->
+                <div class="form-group">
+                    <p>{!! $subContentTwoRepository->body !!}</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="{!! route('contents.index')!!}" class="btn btn-default">Back</a>
+        </div>
+    </div>
+</div><!-- Id Field -->

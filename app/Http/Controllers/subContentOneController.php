@@ -79,6 +79,7 @@ class subContentOneController extends AppBaseController
     public function show($id)
     {
         $subContentOne = $this->subContentOneRepository->findWithoutFail($id);
+        $subContentTwoRepositories = \App\Models\subContentTwoRepository::where('sub_content_one_id', $id)->get();
 
         if (empty($subContentOne)) {
             Flash::error('Sub Content One not found');
@@ -86,7 +87,7 @@ class subContentOneController extends AppBaseController
             return redirect(route('subContentOnes.index'));
         }
 
-        return view('sub_content_ones.show')->with('subContentOne', $subContentOne);
+        return view('sub_content_ones.show')->with('subContentOne', $subContentOne)->with('subContentTwoRepositories', $subContentTwoRepositories);
     }
 
     /**
