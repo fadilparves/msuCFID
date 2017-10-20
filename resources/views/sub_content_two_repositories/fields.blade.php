@@ -5,7 +5,7 @@
 				{{Form::label('sub_number', 'Sub Chapter Number')}}
 				@if(isset($last_sub_number))
 					{{Form::hidden('cond', 1 , array('class' => 'form-control', 'placeholder'=>'', 'id' => 'cond'))}}
-					{{Form::hidden('sub_content_id', $last_sub_number->sub_number-1.0, array('class' => 'form-control', 'id' => 'sub_content_id'))}}
+					{{Form::hidden('sub_content_id', $last_sub_number->sub_number, array('class' => 'form-control', 'id' => 'sub_content_id'))}}
 					{{Form::text('sub_number', null, array('class' => 'form-control', 'id' => 'sub_num', 'readonly'=> 'true'))}}
 				@else
 					{{Form::text('sub_number', null, array('class' => 'form-control', 'id' => 'sub_num','readonly'=> 'true'))}}
@@ -39,9 +39,17 @@
 			var x = $('#courses_id').val();
 			var y = $('#sub_content_id').val();
 
-			var xy = parseFloat(x) + parseFloat(y);
+			var splited = y.split(".");
 
-			$('#sub_num').val(xy.toFixed(1));
+			var last_n = splited[splited.length-1];
+
+			var new_last_n = parseInt(last_n) + 1;
+
+			alert(x + "." + new_last_n);
+
+			var xy = x + "." + new_last_n;
+
+			$('#sub_num').val(xy);
 		}
 		else
 		{
