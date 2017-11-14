@@ -25,6 +25,12 @@ Route::resource('contents', 'ContentController');
 
 Route::resource('subContentOnes', 'subContentOneController');
 
-
-
 Route::resource('subContentTwoRepositories', 'subContentTwoRepositoryController');
+
+Route::get('video-upload', 'VideoUploaderController@create')->name('video.upload');
+
+Route::post('video-upload', 'VideoUploaderController@store')->name('video.store');
+
+Route::get('video/{id}', 'VideoUploaderController@show')->name('video.show');
+
+Route::delete('video/{id}', 'VideoUploaderController@destroy')->name('video.destroy');

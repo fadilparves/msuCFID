@@ -15,7 +15,6 @@ class Content extends Model
     use SoftDeletes;
 
     public $table = 'contents';
-    
 
     protected $dates = ['deleted_at'];
 
