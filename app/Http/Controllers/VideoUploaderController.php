@@ -29,7 +29,7 @@ class VideoUploaderController extends Controller
     	$video->content_id = $contentID;
     	$video->save();
 
-    	return redirect()->route('contents.index');
+    	return redirect()->route('contents.show', ['id' => $video->content_id]);
 
     }
 
@@ -42,5 +42,13 @@ class VideoUploaderController extends Controller
     	$mime = 'video/'.$video->video_mime;
 
     	return view('videos.player')->with('path', $path)->with('mime', $mime);
+    }
+
+    public function destroy($id)
+    {
+        $video = Video::find($id);
+        $video->delete();
+
+        return redirect()->route('contents.show', ['id' => $video->content_id]);
     }
 }

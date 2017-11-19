@@ -64,7 +64,9 @@ class ContentController extends AppBaseController
 
         Flash::success('Content saved successfully.');
 
-        return redirect(route('contents.index'));
+        return redirect()->route('courses.show', ['id' => $content->course_id]);
+
+        // return redirect('/courses/{$course_id}');
     }
 
     /**
@@ -131,7 +133,7 @@ class ContentController extends AppBaseController
 
         Flash::success('Content updated successfully.');
 
-        return redirect(route('contents.index'));
+        return redirect()->route('courses.show', ['id' => $content->course_id]);
     }
 
     /**
@@ -155,6 +157,6 @@ class ContentController extends AppBaseController
 
         Flash::success('Content deleted successfully.');
 
-        return redirect(route('contents.index'));
+        return redirect()->route('courses.show', ['id' => $content->course_id]);
     }
 }

@@ -66,7 +66,7 @@ class subContentOneController extends AppBaseController
 
         Flash::success('Sub Content One saved successfully.');
 
-        return redirect(route('subContentOnes.index'));
+        return redirect()->route('contents.show', ['id' => $subContentOne->content_id]);
     }
 
     /**
@@ -132,7 +132,7 @@ class subContentOneController extends AppBaseController
 
         Flash::success('Sub Content One updated successfully.');
 
-        return redirect(route('subContentOnes.index'));
+       return redirect()->route('contents.show', ['id' => $subContentOne->content_id]);
     }
 
     /**
@@ -156,6 +156,6 @@ class subContentOneController extends AppBaseController
 
         Flash::success('Sub Content One deleted successfully.');
 
-        return redirect(route('subContentOnes.index'));
+        return redirect()->route('contents.show', ['id' => $subContentOne->content_id]);
     }
 }

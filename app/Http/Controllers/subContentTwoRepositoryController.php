@@ -62,7 +62,7 @@ class subContentTwoRepositoryController extends AppBaseController
 
         Flash::success('Sub Content Two Repository saved successfully.');
 
-        return redirect(route('subContentTwoRepositories.index'));
+        return redirect()->route('subContentOnes.show', ['id' => $subContentTwoRepository->sub_content_one_id]);
     }
 
     /**
@@ -127,7 +127,7 @@ class subContentTwoRepositoryController extends AppBaseController
 
         Flash::success('Sub Content Two Repository updated successfully.');
 
-        return redirect(route('subContentTwoRepositories.index'));
+        return redirect()->route('subContentOnes.show', ['id' => $subContentTwoRepository->sub_content_one_id]);
     }
 
     /**
@@ -151,6 +151,6 @@ class subContentTwoRepositoryController extends AppBaseController
 
         Flash::success('Sub Content Two Repository deleted successfully.');
 
-        return redirect(route('subContentTwoRepositories.index'));
+        return redirect()->route('subContentOnes.show', ['id' => $subContentTwoRepository->sub_content_one_id]);
     }
 }
