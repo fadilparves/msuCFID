@@ -9,7 +9,7 @@
                     <h1 class="text-center">{!! $course->courseCode !!} - {!! $course->courseName !!}</h1>
                     <h1 class="text-center">Content List</h1>
                     <h1 class="pull-right">
-                     <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px;margin-right: 10px;" href="{!! route('contents.create') !!}">Add New</a>
+                     <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px;margin-right: 10px;" href="{!! route('contents.create') !!}">Add New Content</a>
                  </h1>
              </section>
              <div class="content">
