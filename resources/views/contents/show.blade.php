@@ -16,10 +16,11 @@
         <div class="box box-primary">
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
-                    @include('contents.subContentOneData');
+                    @include('contents.subContentOneData')
                 </div>
+                <hr>
                 <div class="row" style="padding-left: 20px">
-                    @include('contents.videos');
+                    @include('contents.videos')
                 </div>
 
             </div>

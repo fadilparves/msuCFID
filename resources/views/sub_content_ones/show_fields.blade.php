@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">{!! $subContentOne->sub_number !!} - {!! $subContentOne->title !!}</div>
                 <!-- Body Field -->
-                <div class="form-group">
+                <div class="panel-body">
                     <p>{!! $subContentOne->body !!}</p>
                 </div>
             </div>

@@ -4,7 +4,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">{!! $subContentTwoRepository->sub_number !!} - {!! $subContentTwoRepository->title !!}</div>
                 <!-- Body Field -->
-                <div class="form-group">
+                <div class="panel-body">
                     <p>{!! $subContentTwoRepository->body !!}</p>
                 </div>
             </div>

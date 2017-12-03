@@ -1,17 +1,17 @@
 <table class="table table-responsive" id="courses-table">
     <thead>
-        <th>Course Name</th>
-        <th>Course Code</th>
+        <th colspan="6">Course Name</th>
+        <th colspan="6">Course Code</th>
         <!-- <th>User Id</th> -->
         <th colspan="3">Action</th>
     </thead>
     <tbody>
     @foreach($courses as $course)
         <tr>
-            <td>{!! $course->courseName !!}</td>
-            <td>{!! $course->courseCode !!}</td>
+            <td colspan="6">{!! $course->courseName !!}</td>
+            <td colspan="6">{!! $course->courseCode !!}</td>
             <!-- <td>{!! $course->user_id !!}</td> -->
-            <td>
+            <td colspan="3"> 
                 {!! Form::open(['route' => ['courses.destroy', $course->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
                     <a href="{!! route('courses.show', [$course->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>

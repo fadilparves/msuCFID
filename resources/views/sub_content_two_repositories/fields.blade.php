@@ -45,8 +45,6 @@
 
 			var new_last_n = parseInt(last_n) + 1;
 
-			alert(x + "." + new_last_n);
-
 			var xy = x + "." + new_last_n;
 
 			$('#sub_num').val(xy);
