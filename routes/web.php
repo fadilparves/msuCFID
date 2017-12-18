@@ -50,3 +50,5 @@ Route::get('/api/{id}/get_sub_two_content', 'ApiController@getSubTwoContent')->n
 Route::get('/api/{id}/videos', 'ApiController@listOfVideo')->name('api.getvideos');
 
 Route::get('/api/{id}/video', 'ApiController@getVideo')->name('api.getvideo');
+
+Route::get('/api/{id}/stream_content', 'subContentOneController@get_content_stream');

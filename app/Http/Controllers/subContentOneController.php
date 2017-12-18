@@ -22,7 +22,7 @@ class subContentOneController extends AppBaseController
     public function __construct(subContentOneRepository $subContentOneRepo)
     {
         $this->subContentOneRepository = $subContentOneRepo;
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -157,5 +157,13 @@ class subContentOneController extends AppBaseController
         Flash::success('Sub Content One deleted successfully.');
 
         return redirect()->route('contents.show', ['id' => $subContentOne->content_id]);
+    }
+
+    public function get_content_stream($id)
+    {
+        $subContentOne = $this->subContentOneRepository->findWithoutFail($id);
+        $subContentTwoRepositories = \App\Models\subContentTwoRepository::where('sub_content_one_id', $id)->get();
+
+        return view('sub_content_ones.stream')->with('subContentOne', $subContentOne)->with('subContentTwoRepositories', $subContentTwoRepositories);
     }
 }
