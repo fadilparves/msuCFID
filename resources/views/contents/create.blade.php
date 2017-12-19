@@ -1,24 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="content-header">
-        <h1 class="text-center">
-             New Content
-        </h1>
-    </section>
-    <div class="content">
-        @include('adminlte-templates::common.errors')
-        <div class="box box-primary">
+<div class="py-5 text-white opaque-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <h1 class="text-gray-dark">New Content</h1>
+              <p class="lead mb-4">Complete all the fields below to create new chapter</p>
+              {!! Form::open(['route' => 'contents.store']) !!}
 
-            <div class="box-body">
-                <div class="row">
-                    {!! Form::open(['route' => 'contents.store']) !!}
+              @include('contents.fields')
 
-                        @include('contents.fields')
-
-                    {!! Form::close() !!}
-                </div>
-            </div>
+              {!! Form::close() !!}
+          </div>
         </div>
     </div>
+</div>
 @endsection

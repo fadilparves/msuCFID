@@ -1,19 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="content text-center">
-        @include('adminlte-templates::common.errors')
-        <div class="box box-primary">
+<div class="py-5 text-white opaque-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h1 class="text-gray-dark">New Course</h1>
+            <p class="lead mb-4">Complete all the fields below to create a new course</p>
+           {!! Form::open(['route' => 'courses.store']) !!}
 
-            <div class="box-body">
-                <div class="row">
-                    {!! Form::open(['route' => 'courses.store']) !!}
+                @include('courses.fields')
 
-                        @include('courses.fields')
-
-                    {!! Form::close() !!}
-                </div>
-            </div>
+            {!! Form::close() !!}
         </div>
+      </div>
     </div>
+</div>
 @endsection

@@ -1,23 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="content-header">
-        <h1 class="text-center">
-            Edit Course
-        </h1>
-   </section>
-   <div class="content">
-       @include('adminlte-templates::common.errors')
-       <div class="box box-primary">
-           <div class="box-body">
-               <div class="row">
-                   {!! Form::model($course, ['route' => ['courses.update', $course->id], 'method' => 'patch']) !!}
+<div class="py-5 text-white opaque-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <h1 class="text-gray-dark">Edit Course</h1>
+          <p class="lead mb-4">Complete all the fields below to edit the course</p>
+           {!! Form::model($course, ['route' => ['courses.update', $course->id], 'method' => 'patch']) !!}
 
-                        @include('courses.fields')
+              @include('courses.fields')
 
-                   {!! Form::close() !!}
-               </div>
-           </div>
-       </div>
-   </div>
+           {!! Form::close() !!}
+        </div>
+      </div>
+    </div>
+</div>
 @endsection

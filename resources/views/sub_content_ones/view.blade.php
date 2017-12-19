@@ -1,19 +1,21 @@
+@extends('layouts.app')
+
+@section('content')
 <div class="container">
     <div class="row">
         <div class="box-body">
-            <div class="pull-right">
-                <a href="{!! route('subContentTwoRepositories.create', ['content_id' => $subContentOne->sub_number, 'sub_content_one_id' => $subContentOne->id])!!}" class="btn btn-primary">Add New Second Level Content</a>
-            </div>
             <div class="panel panel-default">
                 <div class="panel-heading">{!! $subContentOne->sub_number !!} - {!! $subContentOne->title !!}</div>
                 <!-- Body Field -->
                 <div class="panel-body">
                     <p>{!! $subContentOne->body !!}</p>
+                    @foreach($subContentTwoRepositories as $sbt)
+                        <h4>{!! $sbt -> sub_number !!} - {!! $sbt -> title !!}</h4>
+                        <p>{!! $sbt->body !!}</p>
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
-
+@endsection

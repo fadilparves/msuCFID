@@ -1,12 +1,13 @@
-<table class="table table-responsive" id="courses-table">
+<table class="table">
     <thead>
-        <th colspan="6">Course Name</th>
-        <th colspan="6">Course Code</th>
-        <!-- <th>User Id</th> -->
-        <th colspan="3">Action</th>
+      <tr>
+        <th colspan = "6" class="bg-danger">Course Name</th>
+        <th colspan = "6" class="bg-danger">Course Code</th>
+        <th colspan = "3" class="bg-danger">Action</th>
+      </tr>
     </thead>
     <tbody>
-    @foreach($courses as $course)
+      @foreach($courses as $course)
         <tr>
             <td colspan="6">{!! $course->courseName !!}</td>
             <td colspan="6">{!! $course->courseCode !!}</td>

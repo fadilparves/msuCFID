@@ -39,3 +39,5 @@ Route::get('/api/{id}/videos', 'ApiController@listOfVideo')->name('api.getvideos
 Route::get('/api/{id}/video', 'ApiController@getVideo')->name('api.getvideo');
 
 Route::get('/api/{id}/stream_content', 'subContentOneController@get_content_stream');
+
+Route::get('/sub_content_one/{id}/view', 'subContentOneController@view_full')->name('subContentOnes.view');

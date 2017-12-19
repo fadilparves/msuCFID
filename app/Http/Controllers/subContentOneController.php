@@ -166,4 +166,12 @@ class subContentOneController extends AppBaseController
 
         return view('sub_content_ones.stream')->with('subContentOne', $subContentOne)->with('subContentTwoRepositories', $subContentTwoRepositories);
     }
+
+    public function view_full($id)
+    {
+        $subContentOne = $this->subContentOneRepository->findWithoutFail($id);
+        $subContentTwoRepositories = \App\Models\subContentTwoRepository::where('sub_content_one_id', $id)->get();
+
+        return view('sub_content_ones.view')->with('subContentOne', $subContentOne)->with('subContentTwoRepositories', $subContentTwoRepositories);
+    }
 }
