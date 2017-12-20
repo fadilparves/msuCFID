@@ -34,13 +34,19 @@
 			var x = $('#courses_id').val();
 			var y = $('#sub_content_id').val();
 
+			// alert(y);
+
 			var splited = y.split(".");
 
 			var last_n = splited[splited.length-1];
 
+			var s = splited[splited.length-2]
+
+			var f = splited[splited.length-3]
+
 			var new_last_n = parseInt(last_n) + 1;
 
-			var xy = x + "." + new_last_n;
+			var xy = f + "." + s + "." + new_last_n;
 
 			$('#sub_num').val(xy);
 		}

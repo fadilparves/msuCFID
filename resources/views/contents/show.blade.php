@@ -19,8 +19,8 @@
       <div class="row">
         <div class="col-md-12">
         <div class="card">
-            <div class="card-header"> List of Sub Content One 
-            <a class="btn btn-primary pull-right"; href="{!! route('subContentOnes.create', ['content_id' => $content->id]) !!}">Add New Sub Content</a>
+            <div class="card-header"> List of Sub Topic
+            <a class="btn btn-primary pull-right"; href="{!! route('subContentOne.createID', ['content_id' => $content->id, 'id' => $content->id ]) !!}">Add New Sub Content</a>
             </div>
             <div class="card-body">
               @include('contents.subContentOneData')
@@ -36,7 +36,7 @@
       <div class="row">
         <div class="col-md-12">
         <div class="card">
-            <div class="card-header"> List of Sub Content One Videos 
+            <div class="card-header"> List of Sub Topic Videos 
                 <a class="btn btn-primary pull-right" href="{!! route('video.upload', ['content_id' => $content->id]) !!}">Add New Video</a>
             </div>
             <div class="card-body">

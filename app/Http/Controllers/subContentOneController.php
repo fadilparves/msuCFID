@@ -12,6 +12,7 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use App\Models\subContentOne;
 
 
 class subContentOneController extends AppBaseController
@@ -45,11 +46,12 @@ class subContentOneController extends AppBaseController
      *
      * @return Response
      */
-    public function create()
+    public function create($id)
     {
-        $last_sub_number = $this->subContentOneRepository->orderBy('created_at', 'desc')->first();
+        //$last_sub_number = $this->subContentOneRepository->where('content_id', 1)->orderBy('created_at', 'desc')->first();
+        $last_sub_number = subContentOne::where('content_id', $id)->orderBy('created_at', 'desc')->first();
         return view('sub_content_ones.create')->with('last_sub_number', $last_sub_number);
-    }
+   }
 
     /**
      * Store a newly created subContentOne in storage.

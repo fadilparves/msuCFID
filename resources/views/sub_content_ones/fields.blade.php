@@ -31,6 +31,10 @@
 		{
 			var x = $('#courses_id').val();
 			var y = $('#sub_content_id').val();
+			
+			if(x >= 2){
+				x = 1;
+			}
 
 			var xy = parseFloat(x) + parseFloat(y);
 

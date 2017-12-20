@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\subContentTwoRepository;
 
 class subContentTwoRepositoryController extends AppBaseController
 {
@@ -41,9 +42,10 @@ class subContentTwoRepositoryController extends AppBaseController
      *
      * @return Response
      */
-    public function create()
+    public function create($sub_content_one_id)
     {
-        $last_sub_number = $this->subContentTwoRepositoryRepository->orderBy('created_at', 'desc')->first();
+        //$last_sub_number = $this->subContentTwoRepositoryRepository->orderBy('created_at', 'desc')->first();
+        $last_sub_number = subContentTwoRepository::where('sub_content_one_id', $sub_content_one_id)->orderBy('created_at', 'desc')->first();
         return view('sub_content_two_repositories.create')->with('last_sub_number', $last_sub_number);;
     }
 

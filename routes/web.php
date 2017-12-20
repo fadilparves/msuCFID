@@ -12,7 +12,11 @@ Route::resource('contents', 'ContentController');
 
 Route::resource('subContentOnes', 'subContentOneController');
 
+Route::get('/subContentOne/{id}/create', 'subContentOneController@create')->name('subContentOne.createID');
+
 Route::resource('subContentTwoRepositories', 'subContentTwoRepositoryController');
+
+Route::get('subContentTwo/{id}/create', 'subContentTwoRepositoryController@create')->name('subContentTwo.createID');
 
 Route::get('video-upload', 'VideoUploaderController@create')->name('video.upload');
 
