@@ -2,9 +2,9 @@
 	@if(isset($last_course_number))
 		{{Form::hidden('cond', 1 , array('class' => 'form-control', 'placeholder'=>'', 'id' => 'cond'))}}
 		{{Form::hidden('last_course_chapter', $last_course_number->chap_num , array('class' => 'form-control', 'id' => 'last_course_chapter'))}}
-		{{Form::text('chpt_num', null, array('class' => 'form-control', 'id' => 'chpt_num', 'readonly'=> 'true'))}}
+		{{Form::text('chap_num', null, array('class' => 'form-control', 'id' => 'chpt_num', 'readonly'=> 'true'))}}
 	@else
-		{{Form::text('chpt_num', null, array('class' => 'form-control', 'id' => 'chpt_num','readonly'=> 'true'))}}
+		{{Form::text('chap_num', null, array('class' => 'form-control', 'id' => 'chpt_num','readonly'=> 'true'))}}
 	@endif
 </div>
 <div class="form-group">
@@ -16,7 +16,7 @@
 	{{Form::textarea('body',null,array('class' => 'form-control', 'placeholder'=>'Content', 'id' => 'body'))}}
 </div> -->
 {{Form::hidden('user_id', Auth::id())}}
-<input type='hidden' name="course_id" id='course_id' value=''>
+{{Form::hidden('course_id', $last_course_number->course_id , array('class' => 'form-control', 'id' => 'course_id'))}}
 <!-- Submit Field -->
 
 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
