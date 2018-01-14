@@ -23,12 +23,6 @@ class ContentController extends AppBaseController
         $this->middleware('auth');
     }
 
-    /**
-     * Display a listing of the Content.
-     *
-     * @param Request $request
-     * @return Response
-     */
     public function index(Request $request)
     {
         $this->contentRepository->pushCriteria(new RequestCriteria($request));
@@ -38,24 +32,13 @@ class ContentController extends AppBaseController
             ->with('contents', $contents);
     }
 
-    /**
-     * Show the form for creating a new Content.
-     *
-     * @return Response
-     */
-    public function create()
+    public function create($id)
     {
-        $courses = \App\Models\Course::pluck('courseName', 'id');
-        return view('contents.create', compact('courses', $courses));
+        // $courses = \App\Models\Course::pluck('courseName', 'id');
+        $last_course_number = \App\Models\Content::where('course_id', $id)->orderBy('created_at', 'desc')->first();
+        return view('contents.create', compact('last_course_number', $last_course_number));
     }
 
-    /**
-     * Store a newly created Content in storage.
-     *
-     * @param CreateContentRequest $request
-     *
-     * @return Response
-     */
     public function store(CreateContentRequest $request)
     {
         $input = $request->all();
@@ -69,13 +52,6 @@ class ContentController extends AppBaseController
         // return redirect('/courses/{$course_id}');
     }
 
-    /**
-     * Display the specified Content.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
     public function show($id)
     {
         $content = $this->contentRepository->findWithoutFail($id);
@@ -111,14 +87,6 @@ class ContentController extends AppBaseController
         return view('contents.edit', compact('content', 'courses'));
     }
 
-    /**
-     * Update the specified Content in storage.
-     *
-     * @param  int              $id
-     * @param UpdateContentRequest $request
-     *
-     * @return Response
-     */
     public function update($id, UpdateContentRequest $request)
     {
         $content = $this->contentRepository->findWithoutFail($id);
@@ -130,19 +98,10 @@ class ContentController extends AppBaseController
         }
 
         $content = $this->contentRepository->update($request->all(), $id);
-
         Flash::success('Content updated successfully.');
-
         return redirect()->route('courses.show', ['id' => $content->course_id]);
     }
 
-    /**
-     * Remove the specified Content from storage.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
     public function destroy($id)
     {
         $content = $this->contentRepository->findWithoutFail($id);
@@ -154,9 +113,7 @@ class ContentController extends AppBaseController
         }
 
         $this->contentRepository->delete($id);
-
         Flash::success('Content deleted successfully.');
-
         return redirect()->route('courses.show', ['id' => $content->course_id]);
     }
 }

@@ -14,7 +14,6 @@ use App\Models\subContentTwoRepository;
 
 class subContentTwoRepositoryController extends AppBaseController
 {
-    /** @var  subContentTwoRepositoryRepository */
     private $subContentTwoRepositoryRepository;
 
     public function __construct(subContentTwoRepositoryRepository $subContentTwoRepositoryRepo)
@@ -22,12 +21,6 @@ class subContentTwoRepositoryController extends AppBaseController
         $this->subContentTwoRepositoryRepository = $subContentTwoRepositoryRepo;
     }
 
-    /**
-     * Display a listing of the subContentTwoRepository.
-     *
-     * @param Request $request
-     * @return Response
-     */
     public function index(Request $request)
     {
         $this->subContentTwoRepositoryRepository->pushCriteria(new RequestCriteria($request));
@@ -37,11 +30,7 @@ class subContentTwoRepositoryController extends AppBaseController
             ->with('subContentTwoRepositories', $subContentTwoRepositories);
     }
 
-    /**
-     * Show the form for creating a new subContentTwoRepository.
-     *
-     * @return Response
-     */
+ 
     public function create($sub_content_one_id)
     {
         //$last_sub_number = $this->subContentTwoRepositoryRepository->orderBy('created_at', 'desc')->first();
@@ -49,13 +38,7 @@ class subContentTwoRepositoryController extends AppBaseController
         return view('sub_content_two_repositories.create')->with('last_sub_number', $last_sub_number);;
     }
 
-    /**
-     * Store a newly created subContentTwoRepository in storage.
-     *
-     * @param CreatesubContentTwoRepositoryRequest $request
-     *
-     * @return Response
-     */
+ 
     public function store(CreatesubContentTwoRepositoryRequest $request)
     {
         $input = $request->all();
@@ -67,13 +50,7 @@ class subContentTwoRepositoryController extends AppBaseController
         return redirect()->route('subContentOnes.show', ['id' => $subContentTwoRepository->sub_content_one_id]);
     }
 
-    /**
-     * Display the specified subContentTwoRepository.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
+
     public function show($id)
     {
         $subContentTwoRepository = $this->subContentTwoRepositoryRepository->findWithoutFail($id);
@@ -87,13 +64,7 @@ class subContentTwoRepositoryController extends AppBaseController
         return view('sub_content_two_repositories.show')->with('subContentTwoRepository', $subContentTwoRepository);
     }
 
-    /**
-     * Show the form for editing the specified subContentTwoRepository.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
+
     public function edit($id)
     {
         $subContentTwoRepository = $this->subContentTwoRepositoryRepository->findWithoutFail($id);
@@ -107,14 +78,7 @@ class subContentTwoRepositoryController extends AppBaseController
         return view('sub_content_two_repositories.edit')->with('subContentTwoRepository', $subContentTwoRepository);
     }
 
-    /**
-     * Update the specified subContentTwoRepository in storage.
-     *
-     * @param  int              $id
-     * @param UpdatesubContentTwoRepositoryRequest $request
-     *
-     * @return Response
-     */
+ 
     public function update($id, UpdatesubContentTwoRepositoryRequest $request)
     {
         $subContentTwoRepository = $this->subContentTwoRepositoryRepository->findWithoutFail($id);
@@ -132,13 +96,7 @@ class subContentTwoRepositoryController extends AppBaseController
         return redirect()->route('subContentOnes.show', ['id' => $subContentTwoRepository->sub_content_one_id]);
     }
 
-    /**
-     * Remove the specified subContentTwoRepository from storage.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
+
     public function destroy($id)
     {
         $subContentTwoRepository = $this->subContentTwoRepositoryRepository->findWithoutFail($id);

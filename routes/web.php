@@ -10,6 +10,8 @@ Route::resource('courses', 'CourseController');
 
 Route::resource('contents', 'ContentController');
 
+Route::get('/contents/{id}/create', 'ContentController@create')->name('contents.create');
+
 Route::resource('subContentOnes', 'subContentOneController');
 
 Route::get('/subContentOne/{id}/create', 'subContentOneController@create')->name('subContentOne.createID');
