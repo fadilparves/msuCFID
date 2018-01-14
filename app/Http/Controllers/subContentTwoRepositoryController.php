@@ -34,8 +34,9 @@ class subContentTwoRepositoryController extends AppBaseController
     public function create($sub_content_one_id)
     {
         //$last_sub_number = $this->subContentTwoRepositoryRepository->orderBy('created_at', 'desc')->first();
+        $scoid = $sub_content_one_id;
         $last_sub_number = subContentTwoRepository::where('sub_content_one_id', $sub_content_one_id)->orderBy('created_at', 'desc')->first();
-        return view('sub_content_two_repositories.create')->with('last_sub_number', $last_sub_number);;
+        return view('sub_content_two_repositories.create')->with('last_sub_number', $last_sub_number)->with('scoid', $scoid);
     }
 
  
