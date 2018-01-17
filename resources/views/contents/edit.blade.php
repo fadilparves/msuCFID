@@ -10,7 +10,7 @@
               <p class="lead mb-4">Complete all the fields below to edit a chapter</p>
               {!! Form::model($content, ['route' => ['contents.update', $content->id], 'method' => 'patch']) !!}
 
-                @include('contents.fields')
+                @include('contents.fieldsedit')
 
               {!! Form::close() !!}
           </div>
