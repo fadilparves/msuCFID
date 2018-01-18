@@ -77,14 +77,14 @@ class ContentController extends AppBaseController
     public function edit($id)
     {
         $content = $this->contentRepository->findWithoutFail($id);
-        $last_course_number = \App\Models\Content::where('course_id', $id)->orderBy('created_at', 'desc')->first();
+        //$last_course_number = \App\Models\Content::where('course_id', $id)->orderBy('created_at', 'desc')->first();
         if (empty($content)) {
             Flash::error('Content not found');
 
             return redirect(route('contents.index'));
         }
 
-        return view('contents.edit', compact('content', 'last_course_number'));
+        return view('contents.edit')->with('content', $content);
     }
 
     public function update($id, UpdateContentRequest $request)
