@@ -9,8 +9,8 @@
                 </div>
             </div>
         </div>
-        <div class="text-center">
+        <!-- <div class="text-center">
             <a href="{!! route('contents.index')!!}" class="btn btn-default">Back</a>
-        </div>
+        </div> -->
     </div>
 </div><!-- Id Field -->

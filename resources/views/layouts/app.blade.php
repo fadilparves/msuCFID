@@ -4,17 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" href="https://v40.pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css">  -->
-  <script type="text/javascript" src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
-  <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
   <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ asset('/css/bootstrap.css') }}">
+  <script type="text/javascript" src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/tinymce/js/tinymce/tinymce.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/tinymce/js/tinymce/jquery.tinymce.min.js') }}"></script>
   <link href="{{ asset('css/video-js.css') }}" rel="stylesheet">
   <script type="text/javascript" src="{{ asset('js/videojs-ie8.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/video.js') }}"></script>
-  <link href="{{ asset('css/app.scss') }}" rel="stylesheet">
+  <!-- <link href="{{ asset('css/app.scss') }}" rel="stylesheet"> -->
 </head>
 
 <body class="" background="https://preview.ibb.co/bNSQjm/photo_2017_12_20_03_17_32.jpg" style="background-repeat: no-repeat; background-size: 1500px 7000px;">
